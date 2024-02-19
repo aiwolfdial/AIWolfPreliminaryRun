@@ -1,7 +1,7 @@
 import time
 from sshtunnel import SSHTunnelForwarder
-import util
-from connection import TCPClient
+import lib.util as util
+from lib.connection import TCPClient
 
 if __name__ == "__main__":
 	config_path = "./res/config.ini"
