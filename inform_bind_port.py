@@ -19,7 +19,7 @@ if __name__ == "__main__":
 	allow_agent = None
 	host_pkey_directories = None
 
-	if config["use_ssh_agent"]:
+	if inifile.getboolean("ssh","use_ssh_agent"):
 		allow_agent = True
 	else:
 		host_pkey_directories = config["IdentityFile"]
