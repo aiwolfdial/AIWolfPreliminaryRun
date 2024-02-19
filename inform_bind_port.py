@@ -7,7 +7,7 @@ if __name__ == "__main__":
 	config_path = "./res/config.ini"
 	inifile = util.check_config(config_path=config_path)
 	inifile.read(config_path,"UTF-8")
-	config = util.read_ssh_config(ssh_config_path=inifile.get("ssh","config_path"), ssh_host_name=inifile.get("ssh","host_name"))
+	config = util.read_ssh_config(ssh_config_path=inifile.get("ssh","ssh_config_path"), ssh_host_name=inifile.get("ssh","host_name"))
 
 	# hold bind ports
 	port_list = []
