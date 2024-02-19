@@ -1,7 +1,7 @@
 Host aiwolf-server
-HostName
+HostName [公式運営サーバのipアドレス]
 User [user name]
-IdentityFile ~/.ssh/id_rsa
+IdentityFile [秘密鍵のパス]
 RemoteForward [remote_port1] localhost:[local_port1]
 RemoteForward [remote_port2] localhost:[local_port2]
 RemoteForward [remote_port3] localhost:[local_port3]
