@@ -17,12 +17,12 @@ if __name__ == "__main__":
 		port_list.append(remote_port)
 	
 	allow_agent = None
-	host_pkey_directories = None
+	ssh_pkey = None
 
 	if inifile.getboolean("ssh","use_ssh_agent"):
 		allow_agent = True
 	else:
-		host_pkey_directories = config["IdentityFile"]
+		ssh_pkey = config["identityfile"]
 
 	# make ssh tunnel
 	server = SSHTunnelForwarder(
@@ -31,7 +31,7 @@ if __name__ == "__main__":
 		local_bind_address=(inifile.get("tcp-client","host"),inifile.getint("tcp-client","port")),
 		remote_bind_address=("localhost",10001),
 		allow_agent=allow_agent,
-		host_pkey_directories = host_pkey_directories,
+		ssh_pkey = ssh_pkey,
 	)
 
 	server.start()
