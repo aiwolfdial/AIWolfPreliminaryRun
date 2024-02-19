@@ -44,10 +44,10 @@ if __name__ == "__main__":
 
 		# send bind ports
 		client.send(message=" ".join(port_list))
+		client.close()
 	except:
 		print("ERROR")
-
-	client.close()
+		client.close()
 
 	server.stop()
 	server.close()
