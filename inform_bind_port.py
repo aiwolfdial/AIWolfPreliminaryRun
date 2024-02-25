@@ -22,7 +22,7 @@ if __name__ == "__main__":
 	if inifile.getboolean("ssh","use_ssh_agent"):
 		allow_agent = True
 	else:
-		ssh_pkey = config["identityfile"]
+		ssh_pkey = config["identityfile"][0]
 
 	# make ssh tunnel
 	server = SSHTunnelForwarder(
